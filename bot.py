@@ -34,7 +34,7 @@ async def on_ready():
     check_server_status.start()
 
 #@tasks.loop(minutes=5)
-#async def check_server_status():
+async def check_server_status():
     message = get_server_status()
     print(message)  # For debugging
     for id_str in CHANNEL_IDS:
@@ -53,4 +53,5 @@ async def status(ctx):
     await ctx.send(get_server_status())
 
 bot.run(TOKEN)
+
 
